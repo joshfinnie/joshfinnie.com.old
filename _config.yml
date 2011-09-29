@@ -1,0 +1,5 @@
+markdown: rdiscount
+pygments: true
+permalink: /:year/:title
+lsi: true
+exclude: ['README.textile', 'Rakefile']

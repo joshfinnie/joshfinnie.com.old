@@ -1,0 +1,7 @@
+---
+layout: default
+title: Contact Me
+---
+h1. Need to contact me?
+
+p. Contact me on "Twitter":http://twitter.com/joshfinnie.

@@ -1,0 +1,4 @@
+h1. JoshFinnie.com
+
+This is the "Jekyll":http://github.com/mojombo/jekyll files for
+"JoshFinnie.com":http://joshfinnie.com.
