@@ -1,0 +1,27 @@
+---
+layout: nil
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ 
+ <title>JoshFinnie.com</title>
+ <link href="http://joshfinnie.com/atom.xml" rel="self"/>
+ <link href="http://joshfinnie.com/"/>
+ <updated>{{ site.time | date_to_xmlschema }}</updated>
+ <id>http://joshfinnie.com/</id>
+ <author>
+   <name>Josh Finnie</name>
+   <email>josh@jfin.us</email>
+ </author>
+
+ {% for post in site.posts %}
+ <entry>
+   <title>{{ post.title }}</title>
+   <link href="http://joshfinnie.com{{ post.url }}"/>
+   <updated>{{ post.date | date_to_xmlschema }}</updated>
+   <id>http://joshfinnie.com{{ post.id }}</id>
+   <content type="html">{{ post.content | xml_escape }}</content>
+ </entry>
+ {% endfor %}
+ 
+</feed>
