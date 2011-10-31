@@ -1,0 +1,39 @@
+---
+layout: default
+title: Josh Finnie Uses This
+---
+h1. Josh Finnie Uses This
+
+p. What I use to get stuff done..
+
+h2. What hardware are you using?
+
+p. My main computer is a mid-2011 Apple iMac. Once they were updated to the quad-core i5 chips, I knew it was time to buy. My fiancee made me pick up the Magic Trackpad along with the computer, and I have to admit I haven't looked back since. The trackpad is everything one needs in a mouse and more; I haven't been able to look at a regular mouse since.
+
+p. For work, I have a corporate-issued HP EliteBook 8440p, which is hooked up to a 19" HP monitor. I don't do much other than work on this computer. It still runs Windows XP with IE6; with that software, there's not much I could do with it.
+
+p. I also have an original 10" EEE PC. I use this mostly for coding while on the go, and it runs the most up-to-date Ubuntu operating system.
+
+p. And for hosing, I currently use "Webfaction":http://www.webfaction.com?affiliate=joshfinnie and "prgmr":http://prgmr.com/xen/. Webfaction is where I house all my Flask applications since they have super easy mod_wsgi setup. prgmr is where I play around with system administration; for $5 a month, it is nice to have a sandbox to try new things out.
+
+h2. And what software?
+
+p. For software, I use Google Chrome along with their suite of products (GMail, Google Docs, G+). I also try to stay as much as I can inside the browser and use TweetDeck's Chrome app for all my Twitter and Facebook needs.  
+
+p. For coding, I have always been a VIM person, so when I purchased the mac I immediately found MacVIM. MacVIM is great and with the addition of "Janus":https://github.com/carlhuda/janus it is top notch.
+
+p. I have recently been testing out "Sublime Text 2":http://www.sublimetext.com/2 and have to say that I am liking what I am seeing.  Sublime seems to just give me a little more than I have with MacVIM allowing me to write code just that much faster. I am still hoping for a VIM key binding plug-in for Sublime; once that comes I will probably use Sublime for life.
+
+p. Other programs I use on a regular basis are:
+
+* "Spotify":http://www.spotify.com & "Grooveshark":http://grooveshark.com for music
+* "Filezilla":http://filezilla-project.org/ for FTP
+* "QGIS":http://qgis.org for a awesome open source GIS suite
+* "Pixelmator":http://www.pixelmator.com/ for image manipulation
+* "VirtualBox":https://www.virtualbox.org/ for keeping Ubuntu even on my mac
+
+h2. What would be your dream setup?
+
+p. My dream setup would be a MacBook Air that is wirelessly connected to a MacPro, giving me the form factor of the MacBook Air, but the power of the MacPro. They would be always synced (since they are the same computer), yet when I need to be on-the-go, I can have the awesome MacBook Air. And when I am at my desk, I would have the MacBook Air screen, plus two additional screens tied directly to the MacPro.
+
+p. I would also love the bandwidth and capabilities to host my own stuff; that would definitely be included in my dream setup of the MacPro.

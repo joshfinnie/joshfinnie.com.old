@@ -1,0 +1,16 @@
+---
+layout: post
+title: Dealing with Distractions
+author: Josh Finnie
+tags:
+    - Lifestyle
+    - Tip
+    - Lesson
+---
+h2. Distractions
+
+p. Oh my, I have them. But I am sure everyone does. As a part-time developer, it seems that everywhere I turn I run into another thing that is getting in the way of me completing a project. If you all recall, I gave a pretty good "outline of all my outstanding projects":http://joshfinnie.com/2011/life-changes-and-another-start/ that I want to complete. I am writing this to update you on where I am with all of them... Nowhere!
+
+h2. Life
+
+p. 

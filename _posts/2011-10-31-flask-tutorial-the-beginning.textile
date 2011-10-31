@@ -1,0 +1,40 @@
+---
+layout: post
+title: Flask Tutorial - The Beginning
+author: Josh Finnie
+tags:
+    - Python
+    - Flask
+    - Tutorial
+---
+h2. What's to come.
+
+p. Hello. And welcome back. I am expecting to write a few blog posts about the journy I am about to take. I have gotten it in my head that it would be a good idea to work through a Python clone of "Hacker News":http://news.ycombinator.com. I wrote about the idea of news.GISQuery "here":http://joshfinnie.com/2011/life-changes-and-another-start/ and I thought it would be a great idea to write about my experiences as I build the site.
+
+p. I am not sure how this is going to go or even how well it is going to work, but I thought that we can all learn something together. I am in the learning profession and feel that learning python while showing people my growing pains will be a great opportunity. Let people learn through my learning process.
+
+h2. What's Done is Done
+
+p. I am not going to lie. I have some experience with both Python and the Flask micro-framework, so I am not starting this from scratch. I have build "BeerLedge":http://beerledge.com using Flask, and have been toying with it a lot lately. However, I want to do a lot of things with this project that will push the boundry of my knowledge. This won't be so much a website (though that is the ultimate goal), but this will also be a framework for people who want to create such websites using Flask.
+
+p. So, what does this mean? It means that I have created a project on GitHub called "Flacker-News":https://github.com/joshfinnie/Flacker-News, and it is this project that we are going to work on throughout these blog posts. I am hoping that I could use the power of GitHub for good and have more people follow along with the progress of Flacker-News.
+
+h2. Preperation
+
+p. If you want to follow along with these tutorials, please get comfortable with the "Flask micro-framework":http://flask.pocoo.org/. The documentation is great and should be able to get you up to speed. Flask is quite easy to get up and running, and I have fallen in love with it! Below is all you need to get a Flask website up and running.
+
+bc(bash). $ easy_install Flask
+$ python hello.py
+ * Running on http://localhost:5000/
+
+bc(python).. from flask import Flask
+ app = Flask(__name__)
+ 	
+@app.route("/")
+def hello():
+    return "Hello World!"
+ 
+if __name__ == "__main__":
+    app.run()
+
+p. So I hope that this series will be fruitful for both you and me!

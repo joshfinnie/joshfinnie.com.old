@@ -2,6 +2,8 @@
 layout: post
 title: First Post
 author: JoshFinnie
-tags: ['test', 'Jekyll']
+tags: 
+    - Test
+    - Jekyll
 ---
 Hello and welcome to "Josh Finnie.com":http://joshfinnie.com/. I am very excited that I got "Jekyll":http://github.com/mojombo/jekyll up and running on my new server at "Webfaction"http://webfaction.com/. I appologize in advance for the look and feel of this website as I am trying to get the technology down before I work on its looks.
