@@ -1,0 +1,89 @@
+---
+layout: post
+title: Flask Tutorial - Part 1
+author: Josh Finnie
+tags:
+    - Python
+    - Flask
+    - Tutorial
+    - Extensions
+---
+h2. Review
+
+p. Yesterday's post was a quick and dirty overview of what Flask is and what it can do for us. Today we are going to expand on our simple Flask program and start to create a working website. So in review, below is what we had for the first Flask application:
+
+{% highlight python %}from flask import Flask
+ app = Flask(__name__)
+ 	
+@app.route("/")
+def hello():
+    return "Hello World!"
+ 
+if __name__ == "__main__":
+    app.run()
+{% endhighlight %}
+
+h2. Making a Stronger App
+
+p. The above app, if run, should get you a very simple "Hello World!" application which is the basis of understanding any new language or framework. But it doesn't do us much good. Luckily for us, Flask is very easy to extend using a "wide array":http://flask.pocoo.org/extensions/ of extentions already built for flask. To start off, we want to install two powerful extentions to help with our new website. These two extentions are:
+* "Flask-SQLAlchemy":http://packages.python.org/Flask-SQLAlchemy/
+* "Flask-WTF":http://packages.python.org/Flask-WTF/
+
+p. These extensions give you a very strong database ORM and a very easy form developer. Let's install these two extensions:
+
+{% highlight bash %}$ easy_install Flask-SQAlchemy
+$ easy_install Flask-WTF
+{% endhighlight %}
+
+h2. Building a Stronger App
+
+p. Now that we have two very important extensions installed, let's take a look at what we are going to do to our simple "Hello World!" app to include these extensions:
+
+{% highlight python %}from flask import Flask
+from flaskext.sqlalchemy import *
+from flaskext.wtf import *
+
+app = Flask(__name__)
+db = SQLAlchemy(app)
+ 	
+@app.route("/")
+def hello():
+    return "Hello World!"
+ 
+if __name__ == "__main__":
+    app.run()
+{% endhighlight %}
+
+p. Note that I am adding everything that comes with these extensions and will be narrowing down the scope once we get more involved in the app building process. Also, note that we had to initialize the SQLAlchemy extension.
+
+p. With these two extentions installed and added to our app, let's go ahead and use them. We are first going to make a simple User model and Sign Up form. The code will look like this:
+
+{% highlight python %}from flask import Flask
+from flaskext.sqlalchemy import SQLAlchemy
+from flaskext.wtf import Form, TextField, PasswordField
+
+app = Flask(__name__)
+db = SQLAlchemy(app)
+
+class User(db.Model):
+    __tablename__ = 'users'
+    uid = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(60), unique=True)
+
+class signup(Form):
+    username = TextField("Username")
+    password = PasswordField("Password")
+ 	
+@app.route("/")
+def hello():
+    return "Hello World!"
+ 
+if __name__ == "__main__":
+    app.run()
+{% endhighlight %}
+
+p. With the new User model and Sign Up form, you can see how powerful these two extentions are. And you can see how they make light work of major parts of your web app. Please read the APIs for both of these extentions if you are not clear as to what I did above. There was a lot changed from the first "Hello World!" app to where we stand now. 
+
+h2. In Review
+
+p. In review, we showed how to install Flask extentions and how to incorporate them into your web application. For some practice, extend the User model to something that is worthwhile for a real-world web app. There are some fields that should be added to make this so. Also, for extra credit, do the same to the Sign Up form for next time.

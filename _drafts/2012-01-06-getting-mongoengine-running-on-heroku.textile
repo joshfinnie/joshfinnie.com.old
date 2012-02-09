@@ -1,0 +1,28 @@
+---
+layout: post
+title: Getting MongoEngine Running on Heroku
+author: Josh Finnie
+tags:
+    - Python
+    - MongoEngine
+    - Tutorial
+    - Heroku
+---
+h2. The Process
+
+p. I have recently been playing around with Heroku and one of my most recent pain points was getting MongoEngine properly working. Heroku does a very nice job at making it easy for you to addon MongoDB. I am not going to get into the inner workings of Heroku on this post as they do a great job here. However, once you have added MongoDB to your Heroku app, you have this line of code in your config file: @MONGOHQ_URL => mongodb://username:password@staff.mongohq.com:port/db@.
+
+{% highlight python %}from flask import Flask
+ app = Flask(__name__)
+ 	
+@app.route("/")
+from mongoengine import connect
+
+database = urlparse(os.environ.get('MONGOHQ_URL'))
+
+connect(database.path[1:], 
+        host=database.hostname,
+        port=database.port, 
+        username=database.username,
+        password=database.password)
+{% endhighlight %}

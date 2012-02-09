@@ -1,0 +1,13 @@
+---
+layout: post
+title: Minecraft - Skyblock Part 1
+author: Josh Finnie
+tags:
+    - Minecraft
+    - Lets Play
+    - Screencast
+    - Game play
+---
+p. I said that I wanted to start to post some of my screencasts. Here is a fun one; it is my attempt at a survival adventure map in "Minecraft":http://www.minecraft.net/.
+
+<iframe width="560" height="315" src="http://www.youtube.com/embed/hNvJG9Vk-34" frameborder="0" allowfullscreen></iframe>
