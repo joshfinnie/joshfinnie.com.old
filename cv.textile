@@ -4,17 +4,15 @@ title: Resume
 ---
 h1. Resume
 
-p. Name: *Josh Finnie*
-
 p. Education: *MS in Geography - Central Connecticut State University (expected), BA in Economics - University of Connecticut*
 
-p. Experience: *Trainer - Aetna, Plan Coordination Consultant - Aetna*
+p. Experience: *Application Developer - Koansys, LLC., Trainer - Aetna, Plan Coordination Consultant - Aetna*
 
-p. Projects: *"BeerLedge":http://beerledge.com, "GeoHackr":http://geohackr.com*
+p. Projects: *"See Projects":http://joshfinnie.com/projects.html*
 
-p. Languages: *Python, Ruby, PHP, C++, Java*
+p. Languages: *Python, Javascript, Ruby, PHP, C++, Java*
 
-p. Databases: *MySQL, PostgreSQL, ArcSDE*
+p. Databases: *MySQL, MongoDB, PostgreSQL, ArcSDE*
 
 p. Operating Systems: *Windows XP/Vista/7, OS X 10.6/10.7, Ubuntu Linux 10.10/11.04*
 

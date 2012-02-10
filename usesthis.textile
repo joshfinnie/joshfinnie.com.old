@@ -2,7 +2,7 @@
 layout: default
 title: Josh Finnie Uses This
 ---
-h1. Josh Finnie Uses This
+h1. Josh Finnie Uses This (Old already... I will update this soon.)
 
 p. What I use to get stuff done..
 
@@ -14,7 +14,7 @@ p. For work, I have a corporate-issued HP EliteBook 8440p, which is hooked up to
 
 p. I also have an original 10" EEE PC. I use this mostly for coding while on the go, and it runs the most up-to-date Ubuntu operating system.
 
-p. And for hosing, I currently use "Webfaction":http://www.webfaction.com?affiliate=joshfinnie and "prgmr":http://prgmr.com/xen/. Webfaction is where I house all my Flask applications since they have super easy mod_wsgi setup. prgmr is where I play around with system administration; for $5 a month, it is nice to have a sandbox to try new things out.
+p. And for hosing, I currently use "Webfaction"://www.webfaction.com?affiliate=joshfinnie and "prgmr"://prgmr.com/xen/. Webfaction is where I house all my Flask applications since they have super easy mod_wsgi setup. prgmr is where I play around with system administration; for $5 a month, it is nice to have a sandbox to try new things out.
 
 h2. And what software?
 
@@ -22,14 +22,14 @@ p. For software, I use Google Chrome along with their suite of products (GMail, 
 
 p. For coding, I have always been a VIM person, so when I purchased the mac I immediately found MacVIM. MacVIM is great and with the addition of "Janus":https://github.com/carlhuda/janus it is top notch.
 
-p. I have recently been testing out "Sublime Text 2":http://www.sublimetext.com/2 and have to say that I am liking what I am seeing.  Sublime seems to just give me a little more than I have with MacVIM allowing me to write code just that much faster. I am still hoping for a VIM key binding plug-in for Sublime; once that comes I will probably use Sublime for life.
+p. I have recently been testing out "Sublime Text 2"://www.sublimetext.com/2 and have to say that I am liking what I am seeing.  Sublime seems to just give me a little more than I have with MacVIM allowing me to write code just that much faster. I am still hoping for a VIM key binding plug-in for Sublime; once that comes I will probably use Sublime for life.
 
 p. Other programs I use on a regular basis are:
 
-* "Spotify":http://www.spotify.com & "Grooveshark":http://grooveshark.com for music
-* "Filezilla":http://filezilla-project.org/ for FTP
-* "QGIS":http://qgis.org for a awesome open source GIS suite
-* "Pixelmator":http://www.pixelmator.com/ for image manipulation
+* "Spotify"://www.spotify.com & "Grooveshark"://grooveshark.com for music
+* "Filezilla"://filezilla-project.org/ for FTP
+* "QGIS"://qgis.org for a awesome open source GIS suite
+* "Pixelmator"://www.pixelmator.com/ for image manipulation
 * "VirtualBox":https://www.virtualbox.org/ for keeping Ubuntu even on my mac
 
 h2. What would be your dream setup?

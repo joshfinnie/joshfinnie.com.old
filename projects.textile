@@ -5,3 +5,5 @@ title: Contact Me
 h1. Projects
 * "BeerLedge":http://beerledge.com
 * "AnonTweet.me":http://anontweet.me
+* "Flask Job Board":http://flask-job-board.herokuapp.com (on "GitHub":https://github.com/joshfinnie/Flask-Job-Board)
+* "OSQA on Heroku":http://osqa-heroku.herokuapp.com/ (on "GitHub":https://github.com/joshfinnie/OSQA-Heroku)
