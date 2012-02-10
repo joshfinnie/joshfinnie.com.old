@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>JoshFinnie.com</title>
+    <meta name="description" content="Home of Josh Finnie. This is where you will find my daily blog, code and projects.">
+    <meta name="author" content="Josh Finnie">
+    <meta name="google-site-verification" content="TJ1RB8nr97TGCLSn7gH9BUktQiXSZ9iORXdErQiHLy0" />
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="//joshfinnie.com/bootstrap/css/bootstrap.min.css">
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      hr.soften {
+        height: 1px;
+        margin: 54px 0;
+        background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.1), rgba(0,0,0,0));
+        background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.1), rgba(0,0,0,0));
+        background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.1), rgba(0,0,0,0));
+        background-image:      -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.1), rgba(0,0,0,0));
+        border: 0;
+      }
+    </style>
+    <link href="//joshfinnie.com/bootstrap/js/google-code-prettify/prettify.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="//joshfinnie.com/">JoshFinnie.com</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+            <li><a href="//joshfinnie.com/projects.html">Projects</a></li>
+            <li><a href="//joshfinnie.com/cv.html">Resume</a></li>
+            <li><a href="//joshfinnie.com/usesthis.html">Setup</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+          <div class="pull-right">
+            <a href="//joshfinnie.com/atom.xml"><img src="//joshfinnie.com/img/rss.png" /></a>
+            <a href="//twitter.com/joshfinnie"><img src="//joshfinnie.com/img/twitter.png" /></a>
+            <a href="//linkedin.com/in/joshfinnie"><img src="//joshfinnie.com/img/linkedin.png" /></a>
+          </div> <!-- /pull-right -->
+        </div> <!-- /container -->
+      </div> <!-- /navbar-inner -->
+    </div> <!-- /navbar-fixed-top -->
+    <div class="container">
+      <div class="content">
+        <div class="row">
+          <div class="span8">
+            <div class"post">
+<h2>Flask Tutorial - Part 1 <small>written: November  1, 2011</small></h2>
+<h2>Review</h2>
+<p>Yesterday&#8217;s post was a quick and dirty overview of what Flask is and what it can do for us. Today we are going to expand on our simple Flask program and start to create a working website. So in review, below is what we had for the first Flask application:</p>
+<div class="highlight"><pre><code class="python"><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
+ <span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+ 	
+<span class="nd">@app.route</span><span class="p">(</span><span class="s">&quot;/&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">hello</span><span class="p">():</span>
+    <span class="k">return</span> <span class="s">&quot;Hello World!&quot;</span>
+ 
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</code></pre>
+</div>
+<h2>Making a Stronger App</h2>
+<p>The above app, if run, should get you a very simple &#8220;Hello World!&#8221; application which is the basis of understanding any new language or framework. But it doesn&#8217;t do us much good. Luckily for us, Flask is very easy to extend using a <a href="http://flask.pocoo.org/extensions/">wide array</a> of extentions already built for flask. To start off, we want to install two powerful extentions to help with our new website. These two extentions are:</p>
+<ul>
+	<li><a href="http://packages.python.org/Flask-SQLAlchemy/">Flask-SQLAlchemy</a></li>
+	<li><a href="http://packages.python.org/Flask-WTF/">Flask-<span class="caps">WTF</span></a></li>
+</ul>
+<p>These extensions give you a very strong database <span class="caps">ORM</span> and a very easy form developer. Let&#8217;s install these two extensions:</p>
+<div class="highlight"><pre><code class="bash"><span class="nv">$ </span>easy_install Flask-SQAlchemy
+<span class="nv">$ </span>easy_install Flask-WTF
+</code></pre>
+</div>
+<h2>Building a Stronger App</h2>
+<p>Now that we have two very important extensions installed, let&#8217;s take a look at what we are going to do to our simple &#8220;Hello World!&#8221; app to include these extensions:</p>
+<div class="highlight"><pre><code class="python"><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
+<span class="kn">from</span> <span class="nn">flaskext.sqlalchemy</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">flaskext.wtf</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+<span class="n">db</span> <span class="o">=</span> <span class="n">SQLAlchemy</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+ 	
+<span class="nd">@app.route</span><span class="p">(</span><span class="s">&quot;/&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">hello</span><span class="p">():</span>
+    <span class="k">return</span> <span class="s">&quot;Hello World!&quot;</span>
+ 
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</code></pre>
+</div>
+<p>Note that I am adding everything that comes with these extensions and will be narrowing down the scope once we get more involved in the app building process. Also, note that we had to initialize the SQLAlchemy extension.</p>
+<p>With these two extentions installed and added to our app, let&#8217;s go ahead and use them. We are first going to make a simple User model and Sign Up form. The code will look like this:</p>
+<div class="highlight"><pre><code class="python"><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
+<span class="kn">from</span> <span class="nn">flaskext.sqlalchemy</span> <span class="kn">import</span> <span class="n">SQLAlchemy</span>
+<span class="kn">from</span> <span class="nn">flaskext.wtf</span> <span class="kn">import</span> <span class="n">Form</span><span class="p">,</span> <span class="n">TextField</span><span class="p">,</span> <span class="n">PasswordField</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+<span class="n">db</span> <span class="o">=</span> <span class="n">SQLAlchemy</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">User</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">__tablename__</span> <span class="o">=</span> <span class="s">&#39;users&#39;</span>
+    <span class="n">uid</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Integer</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">username</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">60</span><span class="p">),</span> <span class="n">unique</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">signup</span><span class="p">(</span><span class="n">Form</span><span class="p">):</span>
+    <span class="n">username</span> <span class="o">=</span> <span class="n">TextField</span><span class="p">(</span><span class="s">&quot;Username&quot;</span><span class="p">)</span>
+    <span class="n">password</span> <span class="o">=</span> <span class="n">PasswordField</span><span class="p">(</span><span class="s">&quot;Password&quot;</span><span class="p">)</span>
+ 	
+<span class="nd">@app.route</span><span class="p">(</span><span class="s">&quot;/&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">hello</span><span class="p">():</span>
+    <span class="k">return</span> <span class="s">&quot;Hello World!&quot;</span>
+ 
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</code></pre>
+</div>
+<p>With the new User model and Sign Up form, you can see how powerful these two extentions are. And you can see how they make light work of major parts of your web app. Please read the APIs for both of these extentions if you are not clear as to what I did above. There was a lot changed from the first &#8220;Hello World!&#8221; app to where we stand now.</p>
+<h2>In Review</h2>
+<p>In review, we showed how to install Flask extentions and how to incorporate them into your web application. For some practice, extend the User model to something that is worthwhile for a real-world web app. There are some fields that should be added to make this so. Also, for extra credit, do the same to the Sign Up form for next time.</p>
+</div>
+<div id="disqus_thread"></div>
+          </div> <!-- /span8 -->
+          <div class="span4">
+            <h3>About Me</h3>
+            <img src="//joshfinnie.com/img/josh.jpg" width="75%">
+            <p>My name is Josh Finnie.  I am an Application Developer at Koansys, LLC. in Washington, DC. My main interests are Python and Geolocation, but I also am interested in upcoming
+            technologies like Node.js.</p>
+            <p>I am currently in the process of developing v2 of <a href="//beerledge.com">BeerLedge</a>.</p>
+            <p>I am also a hobbiest <a href="//flickr.com/photos/joshfinnie">photographer</a> and cook.</p>
+          </div> <!-- /span4 -->
+        </div> <!-- /row -->
+        <hr class="soften">
+        <footer>
+          <p>&copy; 2010-2012 - All rights reserved - Josh Finnie<br />
+             Created using <a href="//github.com/mojombo/jekyll">Jekyll</a><br />
+             Last updated: Fri Feb 10 14:37:38 -0500 2012</p>
+        </footer>
+      </div> <!-- /content -->
+    </div> <!-- /container -->
+
+    <!-- Disqus Javascript -->
+    <script type="text/javascript">
+      var disqus_shortname = 'joshfinniedotcom';
+
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+    <!-- Google Anayltics Javascript -->
+    <script type="text/javascript">
+      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+      try {
+        var pageTracker = _gat._getTracker("UA-250621-15");
+        pageTracker._trackPageview();
+      } catch(err) {}
+    </script>
+
+    <!-- Bootstrap javascript -->
+    <script src="//joshfinnie.com/bootstrap/js/jquery.js"></script>
+    <script src="//joshfinnie.com/bootstrap/js/bootstrap-transition.js"></script>
+    <script src="//joshfinnie.com/bootstrap/js/bootstrap-alert.js"></script>
+    <script src="//joshfinnie.com/bootstrap/js/bootstrap-modal.js"></script>
+    <script src="//joshfinnie.com/bootstrap/js/bootstrap-dropdown.js"></script>
+    <script src="//joshfinnie.com/bootstrap/js/bootstrap-scrollspy.js"></script>
+    <script src="//joshfinnie.com/bootstrap/js/bootstrap-tab.js"></script>
+    <script src="//joshfinnie.com/bootstrap/js/bootstrap-tooltip.js"></script>
+    <script src="//joshfinnie.com/bootstrap/js/bootstrap-popover.js"></script>
+    <script src="//joshfinnie.com/bootstrap/js/bootstrap-button.js"></script>
+    <script src="//joshfinnie.com/bootstrap/js/bootstrap-collapse.js"></script>
+    <script src="//joshfinnie.com/bootstrap/js/bootstrap-carousel.js"></script>
+    <script src="//joshfinnie.com/bootstrap/js/bootstrap-typeahead.js"></script>           
+  </body>
+</html>

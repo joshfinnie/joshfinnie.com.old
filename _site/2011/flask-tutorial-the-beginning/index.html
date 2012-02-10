@@ -59,7 +59,31 @@
       <div class="content">
         <div class="row">
           <div class="span8">
-            {{ content }}
+            <div class"post">
+<h2>Flask Tutorial - The Beginning <small>written: October 31, 2011</small></h2>
+<h2>What&#8217;s to come.</h2>
+<p>Hello. And welcome back. I am expecting to write a few blog posts about the journy I am about to take. I have gotten it in my head that it would be a good idea to work through a Python clone of <a href="http://news.ycombinator.com">Hacker News</a>. I wrote about the idea of news.GISQuery <a href="http://joshfinnie.com/2011/life-changes-and-another-start/">here</a> and I thought it would be a great idea to write about my experiences as I build the site.</p>
+<p>I am not sure how this is going to go or even how well it is going to work, but I thought that we can all learn something together. I am in the learning profession and feel that learning python while showing people my growing pains will be a great opportunity. Let people learn through my learning process.</p>
+<h2>What&#8217;s Done is Done</h2>
+<p>I am not going to lie. I have some experience with both Python and the Flask micro-framework, so I am not starting this from scratch. I have build <a href="http://beerledge.com">BeerLedge</a> using Flask, and have been toying with it a lot lately. However, I want to do a lot of things with this project that will push the boundry of my knowledge. This won&#8217;t be so much a website (though that is the ultimate goal), but this will also be a framework for people who want to create such websites using Flask.</p>
+<p>So, what does this mean? It means that I have created a project on GitHub called <a href="https://github.com/joshfinnie/Flacker-News">Flacker-News</a>, and it is this project that we are going to work on throughout these blog posts. I am hoping that I could use the power of GitHub for good and have more people follow along with the progress of Flacker-News.</p>
+<h2>Preperation</h2>
+<p>If you want to follow along with these tutorials, please get comfortable with the <a href="http://flask.pocoo.org/">Flask micro-framework</a>. The documentation is great and should be able to get you up to speed. Flask is quite easy to get up and running, and I have fallen in love with it! Below is all you need to get a Flask website up and running.</p>
+<pre class="bash"><code class="bash">$ easy_install Flask
+$ python hello.py
+ * Running on http://localhost:5000/</code></pre>
+<pre class="python"><code class="python">from flask import Flask
+ app = Flask(__name__)</code>
+ 	
+<code class="python">@app.route("/")
+def hello():
+    return "Hello World!"</code>
+ 
+<code class="python">if __name__ == "__main__":
+    app.run()</code></pre>
+<p>So I hope that this series will be fruitful for both you and me!</p>
+</div>
+<div id="disqus_thread"></div>
           </div> <!-- /span8 -->
           <div class="span4">
             <h3>About Me</h3>
@@ -74,7 +98,7 @@
         <footer>
           <p>&copy; 2010-2012 - All rights reserved - Josh Finnie<br />
              Created using <a href="//github.com/mojombo/jekyll">Jekyll</a><br />
-             Last updated: {{ site.time }}</p>
+             Last updated: Fri Feb 10 14:37:38 -0500 2012</p>
         </footer>
       </div> <!-- /content -->
     </div> <!-- /container -->

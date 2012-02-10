@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ 
+ <title>JoshFinnie.com</title>
+ <link href="http://joshfinnie.com/atom.xml" rel="self"/>
+ <link href="http://joshfinnie.com/"/>
+ <updated>2012-02-10T14:37:38-05:00</updated>
+ <id>http://joshfinnie.com/</id>
+ <author>
+   <name>Josh Finnie</name>
+   <email>josh@jfin.us</email>
+ </author>
+
+ 
+ <entry>
+   <title>Updated to Twitter Bootstrap 2.0</title>
+   <link href="http://joshfinnie.com/2012/update-to-twitter-bootstrap-2-0"/>
+   <updated>2012-02-10T00:00:00-05:00</updated>
+   <id>http://joshfinnie.com/2012/update-to-twitter-bootstrap-2-0</id>
+   <content type="html">&lt;h2&gt;Twitter Bootstrap&lt;/h2&gt;
+&lt;p&gt;I have to say that I have never been happier as a web developer when &lt;a href=&quot;http://twitter.github.com/bootstrap/&quot;&gt;Twitter Bootstrap&lt;/a&gt; was first announced. It gave me a nice design framework that I could use to get my ideas out into the world faster.  I wasn&amp;#8217;t worried about how my website was going to look; I could focus on how it was functioning.&lt;/p&gt;
+&lt;p&gt;There wasn&amp;#8217;t a lot that I could have faulted the first implementation of Twitter Bootstrap. I used it on a few projects without a hitch, but a new version is out so I though I&amp;#8217;d give it a go.&lt;/p&gt;
+&lt;p&gt;Luckily Twitter provided an excellent &lt;a href=&quot;http://twitter.github.com/bootstrap/upgrading.html&quot;&gt;upgrading reference&lt;/a&gt; for people going to version 2.0. The one major thing you need to worry about (if you have a pretty standard installation of Twitter Bootstrap) is the change to the top navigation bar:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text&quot;&gt;Navbar (formerly topbar)
+Base class changed from .topbar to .navbar
+Now supports static position (default behavior, not fixed) and fixed to the top of viewport via .navbar-fixed-top (previously only supported fixed)
+Added vertical dividers to top-level nav
+Improved support for inline forms in the navbar, which now require .navbar-form to properly scope styles to only the intended forms.
+Navbar search form now requires use of the .navbar-search class and its input the use of .search-query. To position the search form, you must use .pull-left or .pull-right.
+Added optional responsive markup for collapsing navbar contents for smaller resolutions and devices. See navbar docs for how to utilize.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;Most important, &lt;code&gt;.topbar&lt;/code&gt; was changed to &lt;code&gt;.navbar&lt;/code&gt;, meaning you want to take some time to change the top bar in your current code. I also enjoy the &lt;a href=&quot;http://twitter.github.com/bootstrap/components.html#navbar&quot;&gt;expanded documentation&lt;/a&gt; of the navbar in general.&lt;/p&gt;
+&lt;p&gt;For a simple blog like this, I have to say that the upgrade to Twitter Bootstrap went without a hitch. I am sure there will be some more tweaking here and there as I progress using version 2.0, but I would recommend to anyone who uses Twitter Bootstrap to take the time and upgrade!&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Minecraft - Skyblock Part 1</title>
+   <link href="http://joshfinnie.com/2011/minecraft-skyblock-part-1"/>
+   <updated>2011-11-14T00:00:00-05:00</updated>
+   <id>http://joshfinnie.com/2011/minecraft-skyblock-part-1</id>
+   <content type="html">&lt;p&gt;I said that I wanted to start to post some of my screencasts. Here is a fun one; it is my attempt at a survival adventure map in &lt;a href=&quot;http://www.minecraft.net/&quot;&gt;Minecraft&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;http://www.youtube.com/embed/hNvJG9Vk-34&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Flask Tutorial - Part 1</title>
+   <link href="http://joshfinnie.com/2011/flask-tutorial-part-1"/>
+   <updated>2011-11-01T00:00:00-04:00</updated>
+   <id>http://joshfinnie.com/2011/flask-tutorial-part-1</id>
+   <content type="html">&lt;h2&gt;Review&lt;/h2&gt;
+&lt;p&gt;Yesterday&amp;#8217;s post was a quick and dirty overview of what Flask is and what it can do for us. Today we are going to expand on our simple Flask program and start to create a working website. So in review, below is what we had for the first Flask application:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;flask&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Flask&lt;/span&gt;
+ &lt;span class=&quot;n&quot;&gt;app&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Flask&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;__name__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+ 	
+&lt;span class=&quot;nd&quot;&gt;@app.route&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;/&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;hello&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Hello World!&amp;quot;&lt;/span&gt;
+ 
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;__name__&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;__main__&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;h2&gt;Making a Stronger App&lt;/h2&gt;
+&lt;p&gt;The above app, if run, should get you a very simple &amp;#8220;Hello World!&amp;#8221; application which is the basis of understanding any new language or framework. But it doesn&amp;#8217;t do us much good. Luckily for us, Flask is very easy to extend using a &lt;a href=&quot;http://flask.pocoo.org/extensions/&quot;&gt;wide array&lt;/a&gt; of extentions already built for flask. To start off, we want to install two powerful extentions to help with our new website. These two extentions are:&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;&lt;a href=&quot;http://packages.python.org/Flask-SQLAlchemy/&quot;&gt;Flask-SQLAlchemy&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href=&quot;http://packages.python.org/Flask-WTF/&quot;&gt;Flask-&lt;span class=&quot;caps&quot;&gt;WTF&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;These extensions give you a very strong database &lt;span class=&quot;caps&quot;&gt;ORM&lt;/span&gt; and a very easy form developer. Let&amp;#8217;s install these two extensions:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;easy_install Flask-SQAlchemy
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;easy_install Flask-WTF
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;h2&gt;Building a Stronger App&lt;/h2&gt;
+&lt;p&gt;Now that we have two very important extensions installed, let&amp;#8217;s take a look at what we are going to do to our simple &amp;#8220;Hello World!&amp;#8221; app to include these extensions:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;flask&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Flask&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;flaskext.sqlalchemy&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;flaskext.wtf&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;app&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Flask&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;__name__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;db&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SQLAlchemy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+ 	
+&lt;span class=&quot;nd&quot;&gt;@app.route&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;/&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;hello&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Hello World!&amp;quot;&lt;/span&gt;
+ 
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;__name__&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;__main__&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;Note that I am adding everything that comes with these extensions and will be narrowing down the scope once we get more involved in the app building process. Also, note that we had to initialize the SQLAlchemy extension.&lt;/p&gt;
+&lt;p&gt;With these two extentions installed and added to our app, let&amp;#8217;s go ahead and use them. We are first going to make a simple User model and Sign Up form. The code will look like this:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;flask&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Flask&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;flaskext.sqlalchemy&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SQLAlchemy&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;flaskext.wtf&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Form&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TextField&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;PasswordField&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;app&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Flask&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;__name__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;db&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SQLAlchemy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;User&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;__tablename__&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;users&amp;#39;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;uid&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Column&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Integer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;primary_key&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;username&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Column&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;60&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;unique&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;signup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Form&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;username&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TextField&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Username&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;password&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;PasswordField&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Password&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+ 	
+&lt;span class=&quot;nd&quot;&gt;@app.route&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;/&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;hello&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Hello World!&amp;quot;&lt;/span&gt;
+ 
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;__name__&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;__main__&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;With the new User model and Sign Up form, you can see how powerful these two extentions are. And you can see how they make light work of major parts of your web app. Please read the APIs for both of these extentions if you are not clear as to what I did above. There was a lot changed from the first &amp;#8220;Hello World!&amp;#8221; app to where we stand now.&lt;/p&gt;
+&lt;h2&gt;In Review&lt;/h2&gt;
+&lt;p&gt;In review, we showed how to install Flask extentions and how to incorporate them into your web application. For some practice, extend the User model to something that is worthwhile for a real-world web app. There are some fields that should be added to make this so. Also, for extra credit, do the same to the Sign Up form for next time.&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Flask Tutorial - The Beginning</title>
+   <link href="http://joshfinnie.com/2011/flask-tutorial-the-beginning"/>
+   <updated>2011-10-31T00:00:00-04:00</updated>
+   <id>http://joshfinnie.com/2011/flask-tutorial-the-beginning</id>
+   <content type="html">&lt;h2&gt;What&amp;#8217;s to come.&lt;/h2&gt;
+&lt;p&gt;Hello. And welcome back. I am expecting to write a few blog posts about the journy I am about to take. I have gotten it in my head that it would be a good idea to work through a Python clone of &lt;a href=&quot;http://news.ycombinator.com&quot;&gt;Hacker News&lt;/a&gt;. I wrote about the idea of news.GISQuery &lt;a href=&quot;http://joshfinnie.com/2011/life-changes-and-another-start/&quot;&gt;here&lt;/a&gt; and I thought it would be a great idea to write about my experiences as I build the site.&lt;/p&gt;
+&lt;p&gt;I am not sure how this is going to go or even how well it is going to work, but I thought that we can all learn something together. I am in the learning profession and feel that learning python while showing people my growing pains will be a great opportunity. Let people learn through my learning process.&lt;/p&gt;
+&lt;h2&gt;What&amp;#8217;s Done is Done&lt;/h2&gt;
+&lt;p&gt;I am not going to lie. I have some experience with both Python and the Flask micro-framework, so I am not starting this from scratch. I have build &lt;a href=&quot;http://beerledge.com&quot;&gt;BeerLedge&lt;/a&gt; using Flask, and have been toying with it a lot lately. However, I want to do a lot of things with this project that will push the boundry of my knowledge. This won&amp;#8217;t be so much a website (though that is the ultimate goal), but this will also be a framework for people who want to create such websites using Flask.&lt;/p&gt;
+&lt;p&gt;So, what does this mean? It means that I have created a project on GitHub called &lt;a href=&quot;https://github.com/joshfinnie/Flacker-News&quot;&gt;Flacker-News&lt;/a&gt;, and it is this project that we are going to work on throughout these blog posts. I am hoping that I could use the power of GitHub for good and have more people follow along with the progress of Flacker-News.&lt;/p&gt;
+&lt;h2&gt;Preperation&lt;/h2&gt;
+&lt;p&gt;If you want to follow along with these tutorials, please get comfortable with the &lt;a href=&quot;http://flask.pocoo.org/&quot;&gt;Flask micro-framework&lt;/a&gt;. The documentation is great and should be able to get you up to speed. Flask is quite easy to get up and running, and I have fallen in love with it! Below is all you need to get a Flask website up and running.&lt;/p&gt;
+&lt;pre class=&quot;bash&quot;&gt;&lt;code class=&quot;bash&quot;&gt;$ easy_install Flask
+$ python hello.py
+ * Running on http://localhost:5000/&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;python&quot;&gt;&lt;code class=&quot;python&quot;&gt;from flask import Flask
+ app = Flask(__name__)&lt;/code&gt;
+ 	
+&lt;code class=&quot;python&quot;&gt;@app.route(&quot;/&quot;)
+def hello():
+    return &quot;Hello World!&quot;&lt;/code&gt;
+ 
+&lt;code class=&quot;python&quot;&gt;if __name__ == &quot;__main__&quot;:
+    app.run()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;So I hope that this series will be fruitful for both you and me!&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Quick UX No-No</title>
+   <link href="http://joshfinnie.com/2011/quick-ux-no-no"/>
+   <updated>2011-10-13T00:00:00-04:00</updated>
+   <id>http://joshfinnie.com/2011/quick-ux-no-no</id>
+   <content type="html">&lt;h2&gt;Why?&lt;/h2&gt;
+&lt;p&gt;I recently went to &lt;a href=&quot;http://www.geico.com&quot;&gt;Geico&lt;/a&gt; to look for some car insurance. After finding an acceptable rate, I proceeded to sign in. The signup process was going smoothly, until I checked if my username was available.  Being my last name combined with the last name of my fiancee, I had some confidence that I would be okay. I like to check for availability when it allows me, so that I don&amp;#8217;t run into any issues down the road. Well, this is what I saw after checking the availability of the username:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/img/bad_ux.png&quot;&gt;&lt;img src=&quot;/img/thumb/bad_ux.png&quot; title=&quot;Geico Screenshot&quot; alt=&quot;Geico Screenshot&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;A gigantic red box! How is my username taken? I was in shock&amp;#8230;&lt;/p&gt;
+&lt;p&gt;That is until I actually read the message within the gigantic red box. The username is available for my use. Why mark that message in red? I associate red with an error and my head automatically assumed that the username was bad.&lt;/p&gt;
+&lt;p&gt;I find it amazing how quickly our brains can detect color and associate it with a meaning long before we have the time to read the message sent. I highly recommend using red highlighting for errors or things of important. Success should never be highlighted red, it doesn&amp;#8217;t work with our brain&amp;#8217;s reception of color.&lt;/p&gt;
+&lt;h2&gt;Which colors?&lt;/h2&gt;
+&lt;p&gt;I use &lt;a href=&quot;http://twitter.github.com/bootstrap/&quot;&gt;Twitter&amp;#8217;s Bootstrap&lt;/a&gt; to help style this site, and I love it. The nice thing about this pre-defined stylesheet is that it gives you the standard acceptable coloring for all sorts of notifications:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/img/bootstrap_example.png&quot;&gt;&lt;img src=&quot;/img/thumb/bootstrap_example.png&quot; title=&quot;Bootstrap Notification Coloring&quot; alt=&quot;Bootstrap Notification Coloring&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;What does everyone thing? Does using standard highlighting for notifications really matter? Does Twitter have them right in Bootstrap? I would love to hear your comments below.&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>A Coder's Lifestyle</title>
+   <link href="http://joshfinnie.com/2011/a-coders-lifestyle"/>
+   <updated>2011-10-04T00:00:00-04:00</updated>
+   <id>http://joshfinnie.com/2011/a-coders-lifestyle</id>
+   <content type="html">&lt;h2&gt;Background&lt;/h2&gt;
+&lt;p&gt;While studying for my undergraduate degree, I briefly dabbled in programming as amajor. I first started in the Computer Science department, but soon felt out-of-place. The introduction class was basically a &amp;#8220;Convert this C++, which you should already know, into Java.&amp;#8221; I felt entirely lost. Luckily, moving tothe Computer Engineering department gave me the base I needed.&lt;/p&gt;
+&lt;p&gt;Jump forward 5 years of undergraduate education, and I graduated with a bachelors in Economics. I don&amp;#8217;t know why, maybe it was the easy way out, but I never felt like I could succeed as an computer scientist.&lt;/p&gt;
+&lt;h2&gt;Today&lt;/h2&gt;
+&lt;p&gt;Today, I work for a large insurance company as a trainer; almost as removed from a programmer as you can get. But I still feel the urge to create things through code. That is why I have been working on so many pet projects; I just don&amp;#8217;t have enough hours in the day.&lt;/p&gt;
+&lt;h2&gt;How to Succeed&lt;/h2&gt;
+&lt;p&gt;I am not sure I know the answer to the question, &amp;#8220;how to succeed?&amp;#8221; And more importantly, I really need to sit down and define what succeed is, but each night I learn another thing about a programming language that I didn&amp;#8217;t know before and hopefully soon enough I will be someone who can hold their weight on sites like &lt;a href=&quot;http://stackoverflow.com&quot;&gt;StackOverflow&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Here are my tips that I have learned so far:&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;&lt;strong&gt;Don&amp;#8217;t over extend yourself&lt;/strong&gt; This is especially true if you have a full-time job that is not programming related. I find that I get some grandious idea while at work, get home and bang it out. All this does is lead to frustration when it doesn&amp;#8217;t work and it&amp;#8217;s already 1AM. Start slow.&lt;/li&gt;
+	&lt;li&gt;&lt;strong&gt;Stick to one technology at a time.&lt;/strong&gt; Everywhere you read there is going to be some up-and-coming technology that everyone wants to use. When you are not a full-time programmer, there is no time for you to really experiment with new technologies. You need to make sure your footing is solid before moving forward.&lt;/li&gt;
+	&lt;li&gt;&lt;strong&gt;Finish something.&lt;/strong&gt; It is an amazing feeling when you have finished a program to the point that it works. It is a great boost that you can use to get more excited about programming your next project. No matter how small it is, finish something.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I am sure I will have more thoughts as I get back into bloggin, but I thought this would be a good step in the right direction. Let me know what you think.&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Life Changes and Another Start with Jekyll</title>
+   <link href="http://joshfinnie.com/2011/life-changes-and-another-start"/>
+   <updated>2011-09-29T00:00:00-04:00</updated>
+   <id>http://joshfinnie.com/2011/life-changes-and-another-start</id>
+   <content type="html">&lt;h2&gt;Hello, again.&lt;/h2&gt;
+&lt;p&gt;It has seemed that I have forgone posting here for quite some time. I never really got the hang of it, and the design never seemed right. This is not an excuse, but more of an explanation of what has been happening in my life.&lt;/p&gt;
+&lt;p&gt;Most recently, I have finally made the move out of Connecticut and now reside in Washington, DC. I have wanted to make the move out of Connecticut for some time; I yearned for a big city lifestyle. And with my fiancee finally graduating from her master&amp;#8217;s program, I thought this would be a great time to make the jump.&lt;/p&gt;
+&lt;p&gt;It was not easy, however! There seemed to be immeasurable amount of hurdles that we had to jump. Finding an apartment in the DC area was almost impossible; our one remaining car (We sold my VW Rabbit to help fund the move) was hit and totaled; Budget Rental cancelled our truck last minute. However, this has been my first week here (I was lucky enough to have the ability to work from home at my current job), and I could not be happier.&lt;/p&gt;
+&lt;p&gt;With this move, I have revitalized my energies towards all things internet. I have a growing desire to finish all my outstanding projects and it starts here&amp;#8230;&lt;/p&gt;
+&lt;h2&gt;What&amp;#8217;s new?&lt;/h2&gt;
+&lt;p&gt;I have done very little here in terms of coding, but with the release of &lt;a href=&quot;http://twitter.github.com/bootstrap/&quot;&gt;Bootstrap by Twitter&lt;/a&gt;, I feel as though I can throw something up that looks half-way decent without any trouble at all. The iteration of &lt;span class=&quot;caps&quot;&gt;CSS&lt;/span&gt; that I had on this site before was terrible, and it never allowed me to be proud of what I was doing here (or similarly what I was doing over at &lt;a href=&quot;http://geohackr.com&quot;&gt;Geohackr&lt;/a&gt;).  With Bootstrap, I have something nice enough to get by, where now I can work solely on content. I am still using &lt;a href=&quot;https://github.com/mojombo/jekyll&quot;&gt;Jekyll&lt;/a&gt;, but I have added a &lt;code&gt;rake deploy&lt;/code&gt; option that allows me to put up new posts super-fast with minimal effort.&lt;/p&gt;
+&lt;h2&gt;On the horizon&lt;/h2&gt;
+&lt;p&gt;I have a lot going through in my head right now as to what I want to do moving forward. Below is a short list of what I have on my plate and what I have planned for each of them.&lt;/p&gt;
+&lt;dl&gt;
+	&lt;dt&gt;&lt;a href=&quot;http://beerledge.com&quot;&gt;BeerLedge&lt;/a&gt;&lt;/dt&gt;
+	&lt;dd&gt;Currently in the process of switching out the &lt;span class=&quot;caps&quot;&gt;CSS&lt;/span&gt; for jQuery Mobile to make it more user friendly on most smartphones. Also looking to add some extra features to make it stand above the other mobile beer-checkin sites.&lt;/dd&gt;
+	&lt;dt&gt;&lt;a href=&quot;http://anontweet.me&quot;&gt;AnonTweet.me&lt;/a&gt;&lt;/dt&gt;
+	&lt;dd&gt;Currently a pet project, it has some success from people using it once and a while. Have been re-writing it using the Flask micro-framework to learn the python wrapper of the Twitter &lt;span class=&quot;caps&quot;&gt;API&lt;/span&gt;.&lt;/dd&gt;
+	&lt;dt&gt;140Pl.us&lt;/dt&gt;
+	&lt;dd&gt;With the removal of Deck.ly from TweetDeck, I have some renewed interest in this idea. There is a lot of work to get this up and running with any success, but it should be an interesting challenge.&lt;/dd&gt;
+	&lt;dt&gt;&lt;a href=&quot;http://geohackr.com&quot;&gt;GeoHackr&lt;/a&gt;&lt;/dt&gt;
+	&lt;dd&gt;This blog ran into the same issue I ran into with this one. I think with Bootstrap, I should be able to get it up and running with some success. Also, I &lt;span class=&quot;caps&quot;&gt;NEED&lt;/span&gt; to finish my thesis so I should get a renewed interest in the topic anyways.&lt;/dd&gt;
+	&lt;dt&gt;GISQuery&lt;/dt&gt;
+	&lt;dd&gt;Now that &lt;a href=&quot;http://osqa.net&quot;&gt;&lt;span class=&quot;caps&quot;&gt;OSQA&lt;/span&gt;&lt;/a&gt; is maturing with some regularity, I feel that bringing GISQuery up and running will be a lot easier.  I rewrote most of the code in Flask, but never made it go live.  I am thinking of setting up the code on GitHub as Flask-QandA and going from there. This website has a lot of work to compete with StackExchange, but I think personalizing it beyond what StackExchange will be willing to do is where I can win this battle.&lt;/dd&gt;
+	&lt;dt&gt;news.GISQuery&lt;/dt&gt;
+	&lt;dd&gt;This is a new site I have been working on that allows people to submit &lt;span class=&quot;caps&quot;&gt;GIS&lt;/span&gt; stories in the fashion of &lt;a href=&quot;http://news.ycombinator.com&quot;&gt;Hacker News&lt;/a&gt;. I am very excited about this one, and with the new developments in Flask (mostly &lt;a href=&quot;https://github.com/jean-philippe/Flask-Dashed&quot;&gt;the new Admin extension&lt;/a&gt;), the progress of this site should rapidly pick up.&lt;/dd&gt;
+	&lt;dt&gt;DotFiler&lt;/dt&gt;
+	&lt;dd&gt;DotFiler is suppose to be a website where people can upload their dotfiles and retrieve them when needed. I was hoping to add a social flare to the site letting people rate/comment/subscribe to dotfiles, but this idea never got off the ground. Maybe one day&amp;#8230;&lt;/dd&gt;
+	&lt;dt&gt;BiblioQuick&lt;/dt&gt;
+	&lt;dd&gt;BiblioQuick was something that I thought of while working on my master&amp;#8217;s thesis. I though that it would be great if there was a place that you can go and see all the bibliographies of papers on a topic and have people rate and rank each bibliography. Much like DotFiler, this never got off the ground, but as I said above I am again getting into the swing of the master&amp;#8217;s thesis and ideas for this site my come fast and furious.&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h2&gt;In Closing&lt;/h2&gt;
+&lt;p&gt;Thanks for reading my ramblings above. Come back here as I continue my promise of writing more. I also plan on making some videos that I will be posting here. I love &lt;a href=&quot;http://minecraft.net&quot;&gt;Minecraft&lt;/a&gt; and would love to start a &amp;#8220;Let&amp;#8217;s Play.&amp;#8221; There is also the idea of creating a video tutorial of Flask as I work my way through building the websites mentioned above. Who knows&amp;#8230; Thanks again, and come back for more regularly-scheduled posts!&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Banning IE6</title>
+   <link href="http://joshfinnie.com/2010/banning-ie6"/>
+   <updated>2010-09-15T00:00:00-04:00</updated>
+   <id>http://joshfinnie.com/2010/banning-ie6</id>
+   <content type="html">&lt;p&gt;&lt;a href=&quot;/img/IE6-blocked.png&quot;&gt;&lt;img src=&quot;/img/thumb/IE6-blocked.png&quot; title=&quot;IE6 is blocked.&quot; alt=&quot;IE6 is blocked.&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I really don&amp;#8217;t understand why people have decided that I am not allowed to see their website.  Sure, I understand that IE6 is overly out-of-date, but there has to be a reason that I am running it.  For example, my office has not upgraded yet; so because of that I am not allowed to see your site?&lt;/p&gt;
+&lt;p&gt;Given the fact that IE in general has a lot of little hacks required to make a website look good, I come to your websites with an understanding that my view of your website might not be ideal.  I even understand that I might not have all the functionality that I should given how IE reacts to javascript and your beautiful ajax-y stuff.  But I like content.  I don&amp;#8217;t run javascript; I don&amp;#8217;t run flash.  But you don&amp;#8217;t have a problem with that.  Just that I run IE6.&lt;/p&gt;
+&lt;p&gt;Stop with this trend of blocking IE6 and allow people, who most likely understand that they are running an out-of-date browser but can&amp;#8217;t do anything about it, to read the content that you worked so hard to write!  Please?&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Public Transportation in Connecticut</title>
+   <link href="http://joshfinnie.com/2010/public-transportation-in-connecticut"/>
+   <updated>2010-02-24T00:00:00-05:00</updated>
+   <id>http://joshfinnie.com/2010/public-transportation-in-connecticut</id>
+   <content type="html">&lt;p&gt;I have lived in Hartford almost seven months now and every once and a while I get an itching to go out and try public transportation. I see them everywhere, Connecticut’s &lt;span class=&quot;caps&quot;&gt;DOT&lt;/span&gt; buses and all their blueness. But their usefulness escapes me. Granted I live in the major city and work in a suburb, but one would think that I would be able to get a bus from relatively close to my apartment complex and be able to have it drop me off at work. (And of course the reason why I think this is because I have a bus stop at the front door of my place of employement.) However, this is not the case. For some reason when Connecticut was determining the bus routes, they felt it was common knowledge that only people north of the city center would want to work in the northern part of the state; being closer to West Hartford than Bloomfield, I need not apply.&lt;/p&gt;
+&lt;p&gt;This is silly. Why can’t I catch one bus from my neighborhood of Parkville and get to Windsor? Why do I have to take a bus to the city center, and then get on another bus meant for people who live north of the center? To add insult to injury, I have to make my way down to &amp;quot;CCSU&amp;quot;http://www.ccsu.edu every once and a while and forget trying to get from Windsor to New Britain in any reasonable timeframe.&lt;/p&gt;
+&lt;p&gt;I have to say that with the cold weather around us, my car coming to its 60,000 mile checkup, and the plethora of buses I pass on my commute to and from work, I should be able to take said buses! I don’t know what can be done about the current bus routes in Connecticut. I once tried to solve this issue at UConn as an undergraduate, but fell short. I think trying to take on a system as big as the one in Connecticut might be a lost cause.&lt;/p&gt;
+&lt;p&gt;And there is some good news on the public transportation front. There is a proposal for a light rail line to be installed from New Haven to Springfield (which will include a stop in both Hartford and New Britain. And there is a bus line that is being built especially for the New Britain to Hartford commute. Obviously these two projects haven’t even started yet, so it might be a loss cause on my part, but I am happy to see Connecticut thinking about commuters who want to use the public transportation that is offered. I just wish I could…&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Transfering Domains</title>
+   <link href="http://joshfinnie.com/2010/transfering-domains"/>
+   <updated>2010-02-11T00:00:00-05:00</updated>
+   <id>http://joshfinnie.com/2010/transfering-domains</id>
+   <content type="html">&lt;p&gt;So it is official. I have finally moved all my domains away from my old webhosting provider to GoDaddy. I am not sure why I kept all my domains with my webhosting company, but it made a terror when I started this process of switching to &amp;quot;WebFaction&amp;quot;http://webfaction.com/.&lt;/p&gt;
+&lt;p&gt;If anyone is starting a web development company or even just has a few websites, I highly recommend keeping your domains and hosting seperate! When you make the switch, like I did, from one hosting company to another it will make the whole process much easier.&lt;/p&gt;
+&lt;p&gt;As of right now, I still don’t have all my sites up-and-running, but slowly and surely they are coming back online on WebFaction. Good thing I didn’t have any real important websites that this downtime would effect. I am looking at major redesigns of the two sites I care about: &amp;quot;140Plus&amp;quot;http://140pl.us/ and &lt;a href=&quot;http://geohackr.com&quot;&gt;GeoHackr&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If and when I switch next time all I have to do is change the &lt;span class=&quot;caps&quot;&gt;DNS&lt;/span&gt; and poof!&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Converting GeoHackr from WordPress to Jekyll</title>
+   <link href="http://joshfinnie.com/2010/converting-geohackr-from-wordpress-to-jekyll"/>
+   <updated>2010-02-02T00:00:00-05:00</updated>
+   <id>http://joshfinnie.com/2010/converting-geohackr-from-wordpress-to-jekyll</id>
+   <content type="html">&lt;p&gt;For the past couple of months I have been working on a Geography based blog called &amp;quot;GeoHackr&amp;quot;http://geohackr.com/. This blog is currently run off a WordPress blog hosted at &amp;quot;Bluehost&amp;quot;http://bluehost.com/, and, now that I have found this wonderful blogging program Jekyll, I am wondering if a full-blown Wordpress implementation is actually worth it.&lt;br /&gt;
+There are a lot of things to consider. Fortunately enough, GeoHackr only has 20+ posts currently writte; if there were more than this I am not sure it would be worth the time it will take to transfer GeoHackr to Jekyll. Other things that I have to take into consideration is the plug-ins that I will be loosing in this transfer. Love it or hate it, WordPress is an amazing blogging platform.&lt;/p&gt;
+&lt;p&gt;Luckily, there are ways around the WordPress plug-in problem. Most of the plug-ins actually have websites that will give you the code needed to install the plug-in on any platform. And in other areas, there are somethings that you can find that work better than what is given through plug-ins. For example, on this blog; I started using Disqus for comments and I have fallen in love with this new system.&lt;br /&gt;
+You can see what the blog posts look like by going to the test site: &amp;#8220;GeoHackr Test&amp;#8221;http://joshfinnie.com/geohackr_test/.&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>First Post</title>
+   <link href="http://joshfinnie.com/2010/first-post"/>
+   <updated>2010-01-25T00:00:00-05:00</updated>
+   <id>http://joshfinnie.com/2010/first-post</id>
+   <content type="html">&lt;p&gt;Hello and welcome to &lt;a href=&quot;http://joshfinnie.com/&quot;&gt;Josh Finnie.com&lt;/a&gt;. I am very excited that I got &lt;a href=&quot;http://github.com/mojombo/jekyll&quot;&gt;Jekyll&lt;/a&gt; up and running on my new server at &amp;quot;Webfaction&amp;quot;http://webfaction.com/. I appologize in advance for the look and feel of this website as I am trying to get the technology down before I work on its looks.&lt;/p&gt;</content>
+ </entry>
+ 
+ 
+</feed>
